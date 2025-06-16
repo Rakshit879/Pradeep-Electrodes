@@ -5,16 +5,20 @@ export function Hero() {
   return (
     <section className="relative min-h-screen bg-black">
       <Navbar />
-      
+
       <div className="absolute inset-0 p-10">
-        <Image
-          src="https://images.unsplash.com/photo-1416949929422-a1d9c8fe84af?w=1600&q=80"
-          alt="Manufacturing background"
-          fill
-          className="object-cover opacity-70"
-          priority
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="object-cover w-full h-full opacity-70"
+        >
+          <source src="/videos/welding.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
+
 
       <div className="relative h-screen flex items-center">
         <div className="container mx-auto px-6">

@@ -1,10 +1,10 @@
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-
+  
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-gray-100">
       <Navbar />
       
       {/* Header Section */}
