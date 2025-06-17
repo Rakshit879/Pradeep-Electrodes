@@ -4,6 +4,8 @@ import { Services } from "@/components/sections/Services";
 import { Booking } from "@/components/sections/Booking";
 import { Social } from "@/components/sections/Social";
 import { BrandVision } from "@/components/sections/BrandVision";
+import ContactPage from "@/components/sections/ContactPage";
+import FloatingButtons from "../components/FloatingButtons";
 
 export default function Home() {
   return (
@@ -14,6 +16,8 @@ export default function Home() {
       <Booking />
       <BrandVision />
       <Social />
+      <ContactPage/>
+      <FloatingButtons/>
     </main>
   );
 }

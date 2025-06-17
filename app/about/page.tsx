@@ -1,6 +1,7 @@
-import { Navbar } from "@/components/Navbar"
+import { Navbar } from "@/components/Navbar";
 import styles from "./about.module.css";
 import Image from "next/image";
+import FloatingButtons from "@/components/FloatingButtons";
 
 export default function AboutPage() {
     return (
@@ -44,6 +45,7 @@ export default function AboutPage() {
                     </Image>
                 </div>
             </section>
+            <FloatingButtons/>
         </main>
     )
 }

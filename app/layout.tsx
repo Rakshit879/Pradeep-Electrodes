@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import '@/lib/fontawesome';
+import RouteLoadingHandler from "../components/sections/RouteLoadingHandler";
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+
+config.autoAddCss = false
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className="antialiased">
+        <RouteLoadingHandler />
         {children}
       </body>
     </html>

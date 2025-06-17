@@ -1,3 +1,4 @@
+import FloatingButtons from "@/components/FloatingButtons";
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -103,6 +104,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+      <FloatingButtons/>
     </main>
   );
 } 
