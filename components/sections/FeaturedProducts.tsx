@@ -1,20 +1,18 @@
 import Image from 'next/image';
+import Link from 'next/link'; // ✅ Import Link
 import { Button } from "@/components/ui/button";
 
 const products = [
   {
-    name: "HyperMat Tech Suite",
-    price: "$25",
+    name: "Mild Steel Electrode",
     image: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=800&q=80"
   },
   {
-    name: "CertiGuard Precision",
-    price: "$25",
+    name: "Stainless Steel Electrode",
     image: "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?w=800&q=80"
   },
   {
-    name: "TechFusion Dynamics",
-    price: "$25",
+    name: "Cutting Electrode",
     image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80"
   }
 ];
@@ -38,16 +36,19 @@ export function FeaturedProducts() {
               <h3 className="font-semibold text-center hover:underline cursor-pointer">
                 {product.name}
               </h3>
-              <p className="text-gray-600">{product.price}</p>
             </div>
           ))}
         </div>
+
+        {/* ✅ Link wraps the Button */}
         <div className="text-center mt-8">
-          <Button variant="outline" size="lg" className="rounded-full px-8">
-            SHOP ALL
-          </Button>
+          <Link href="/services">
+            <Button variant="outline" size="lg" className="rounded-full px-8">
+              SHOP ALL
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
   );
-} 
+}

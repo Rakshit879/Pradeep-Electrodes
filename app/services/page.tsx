@@ -1,110 +1,77 @@
+"use client"
 import FloatingButtons from "@/components/FloatingButtons";
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
-  
+import { useState } from "react";
+import { products, categories } from "@/data/products";
+import Sidebar from "@/components/Sidebar";
+import ProductCard from "@/components/ProductCard";
+import Footer from "@/components/sections/Footer";
+
 export default function ServicesPage() {
+  const [selectedCategory, setSelectedCategory] = useState(categories[0]);
+  const filteredProducts = products.filter(p => p.category === selectedCategory);
   return (
     <main className="min-h-screen bg-gray-100">
       <Navbar />
-      
+ 
       {/* Header Section */}
-      <section className="pt-32 pb-16 px-4">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <h1 className="text-5xl md:text-6xl font-normal">
-              Our Services
-            </h1>
-            <p className="text-gray-600 text-lg leading-relaxed">
-              Welcome to the forefront of manufacturing, where cutting-edge technology
-              meets unparalleled expertise to transform your visions into tangible success.
-              Our commitment to innovation ensures every service we provide transcends
-              the ordinary, setting new standards in excellence and efficiency.
-            </p>
+      <section className="pt-32 pb-20 px-4 bg-gray-50">
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
+
+            {/* Heading */}
+            <div>
+              <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
+                Our <span className="text-yellow-500">Products</span>
+              </h1>
+              <div className="h-1 w-20 bg-yellow-500 mt-2 mb-6 rounded-full"></div>
+            </div>
+
+            {/* Description */}
+            <div>
+              <p className="text-gray-700 text-lg leading-relaxed">
+                At <span className="font-semibold text-black">Pradeep Electrodes</span>, we are committed to delivering
+                high-quality welding solutions that meet the highest standards of
+                strength, reliability, and precision.
+                <br /><br />
+                With state-of-the-art manufacturing processes and strict quality control,
+                our electrodes ensure excellent performance across a wide range of
+                industrial applications. Certified with <strong>ISI</strong> and <strong>ISO</strong> standards, every product that
+                leaves our facility is a testament to our dedication to durability,
+                safety, and innovation.
+                <br /><br />
+                Trusted by professionals across sectors, Pradeep Electrodes continues
+                to power projects with consistent quality and unmatched dependability.
+              </p>
+            </div>
           </div>
         </div>
       </section>
+
 
       {/* Services Grid */}
-      <section className="py-16 px-4">
+      <section className="py-10 px-4">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Precision Crafted Solutions */}
-            <div className="space-y-6">
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1581091012184-7e0cdfbb6797?w=800&q=80"
-                  alt="Precision manufacturing"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="space-y-4">
-                <h2 className="text-2xl font-normal">Precision Crafted Solutions</h2>
-                <p className="text-xl font-medium text-gray-900">$99</p>
-                <p className="text-gray-600 leading-relaxed">
-                  Redefining the manufacturing landscape with tailored solutions that blend 
-                  innovative technology and craftsmanship. Our services transcend traditional 
-                  boundaries to engineer excellence in every product.
-                </p>
-                <Button variant="outline" className="rounded-full px-8">
-                  BOOK NOW
-                </Button>
-              </div>
+          <div className="flex flex-col md:flex-row min-h-screen gap-12 ">
+            <div className="md:w-max w-full sm:px-12 md:px-0 text flex justify-center md:justify-start">
+              <Sidebar categories={categories} onSelect={setSelectedCategory} selected={selectedCategory} />
             </div>
-
-            {/* CertiGuard */}
-            <div className="space-y-6">
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=800&q=80"
-                  alt="Quality certification"
-                  fill
-                  className="object-cover"
+            <div className=" w-full flex flex-row flex-wrap justify-center gap-7">
+              {filteredProducts.map((prod) => (
+                <ProductCard
+                  key={prod.id}
+                  name={prod.name}
+                  slug={prod.slug}
+                  image={prod.image}
                 />
-              </div>
-              <div className="space-y-4">
-                <h2 className="text-2xl font-normal">CertiGuard</h2>
-                <p className="text-xl font-medium text-gray-900">$149</p>
-                <p className="text-gray-600 leading-relaxed">
-                  Elevate your manufacturing standards with CertiGuard, the ultimate 
-                  assurance in quality certifications. Our innovative processes ensure 
-                  your products meet the highest industry benchmarks, setting a new 
-                  paradigm of excellence.
-                </p>
-                <Button variant="outline" className="rounded-full px-8">
-                  BOOK NOW
-                </Button>
-              </div>
-            </div>
-
-            {/* TechForge Solutions */}
-            <div className="space-y-6">
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?w=800&q=80"
-                  alt="Advanced manufacturing"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="space-y-4">
-                <h2 className="text-2xl font-normal">TechForge Solutions</h2>
-                <p className="text-xl font-medium text-gray-900">$199</p>
-                <p className="text-gray-600 leading-relaxed">
-                  Pioneering the future of manufacturing, TechForge Solutions harnesses 
-                  cutting-edge technology to revolutionize production capabilities, 
-                  pushing the boundaries of innovation every step of the way.
-                </p>
-                <Button variant="outline" className="rounded-full px-8">
-                  BOOK NOW
-                </Button>
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
-      <FloatingButtons/>
+      <Footer />
+      <FloatingButtons />
     </main>
   );
 } 

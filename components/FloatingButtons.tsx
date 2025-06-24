@@ -6,7 +6,7 @@ export default function FloatingButtons() {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
-    <div className="fixed top-1/2 right-0 transform -translate-y-1/2 z-50">
+    <div className="fixed bottom-0 right-0 transform -translate-y-1/2 z-50">
       <div className="flex flex-col bg-black rounded-l-xl overflow-hidden shadow-2xl transition-all duration-300">
         {/* Arrow Button */}
         <button

@@ -8,6 +8,7 @@ import { faIndustry } from '@fortawesome/free-solid-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import FloatingButtons from "@/components/FloatingButtons";
+import Footer from "@/components/sections/Footer";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -214,6 +215,7 @@ export default function ContactPage() {
 
         </div>
       </section>
+      <Footer/>
       <FloatingButtons/>
     </main>
   );
