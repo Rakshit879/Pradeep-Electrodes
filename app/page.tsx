@@ -7,10 +7,12 @@ import { BrandVision } from "@/components/sections/BrandVision";
 import ContactPage from "@/components/sections/ContactPage";
 import FloatingButtons from "../components/FloatingButtons";
 import Footer from "@/components/sections/Footer";
+import ContactPopup from "@/components/ContactPopUp";
 
 export default function Home() {
   return (
     <main>
+      <ContactPopup />
       <Hero />
       <FeaturedProducts />
       <Services/>
