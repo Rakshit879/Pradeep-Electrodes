@@ -1,55 +1,101 @@
+"use client";
+
+import { useParams } from "next/navigation";
 import { products } from "@/data/products";
-import { notFound } from "next/navigation";
+import { Navbar } from "@/components/Navbar";
+import Footer from "@/components/sections/Footer";
+import FloatingButtons from "@/components/FloatingButtons";
 import Image from "next/image";
+import Link from "next/link";
 
-interface ProductPageProps {
-  params: { slug: string };
-}
+export default function ProductDetailPage() {
+  const params = useParams();
+  const slug = typeof params?.slug === "string" ? params.slug : "";
+  const product = products.find(
+    (p) => p.slug === slug || p.name.toLowerCase().includes(slug)
+  );
 
-export default function ProductDetailPage({ params }: ProductPageProps) {
-  const product = products.find((p) => p.slug === params.slug);
-
-  if (!product) return notFound();
+  if (!product) return <div className="text-center p-10 text-xl text-red-500">Product not found.</div>;
 
   return (
-    <div className="min-h-screen px-6 py-20 bg-gray-50">
-      <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        <div className="relative w-full aspect-square rounded-lg overflow-hidden shadow-lg">
-          <Image
-            src={product.image}
-            alt={product.name}
-            fill
-            className="object-contain"
-          />
-        </div>
+    <main className="bg-gray-100 min-h-screen">
+      <Navbar />
+      <section className="pt-28 px-4">
+        <div className="container mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="w-full flex justify-center">
+            <Image
+              src={product.image}
+              alt={product.name}
+              width={450}
+              height={450}
+              className="rounded-2xl shadow-lg"
+            />
+          </div>
+          <div className="bg-white p-8 rounded-2xl shadow-xl">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-yellow-500 mb-6">
+              {product.name}
+            </h2>
+            <p className="text-gray-800 text-lg leading-relaxed mb-6">
+              {product.description ||
+                "Premium electrode for professional-grade performance across multiple welding needs."}
+            </p>
+            <Link href="/contact">
+              <button className="bg-yellow-400 hover:bg-yellow-500 text-white text-lg px-8 py-3 rounded-full font-semibold shadow-md transition duration-300">
+                Enquire Now
+              </button>
+            </Link>
 
-        <div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            {product.name}
-          </h1>
-          <p className="text-gray-700 text-lg mb-6">{product.description}</p>
-
-          {/* Additional Details */}
-          {product.usps && (
-            <>
-              <h3 className="font-semibold mb-2">Key Features:</h3>
-              <ul className="list-disc list-inside text-gray-700 mb-4">
-                {product.usps.map((point, index) => (
-                  <li key={index}>{point}</li>
+            <div className="mt-10">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Why Choose This?</h3>
+              <ul className="list-disc pl-5 text-gray-700 space-y-2">
+                {product.usps?.map((usp, index) => (
+                  <li key={index} className="text-base">{usp}</li>
                 ))}
               </ul>
-            </>
-          )}
-
-          <div className="space-y-2 text-sm text-gray-600">
-            {product.aws && <p><strong>AWS:</strong> {product.aws}</p>}
-            {product.yieldStrength && <p><strong>Yield Strength:</strong> {product.yieldStrength} MPa</p>}
-            {product.tensileStrength && <p><strong>Tensile Strength:</strong> {product.tensileStrength} MPa</p>}
-            {product.elongation && <p><strong>Elongation:</strong> {product.elongation}%</p>}
-            {product.impactValue && <p><strong>Impact Value:</strong> {product.impactValue} J</p>}
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      {/* Technical Table */}
+      <section className="mt-20 px-4 pb-24">
+        <div className="container mx-auto max-w-5xl">
+          <h3 className="text-3xl font-bold mb-8 text-center text-yellow-500">
+            Technical Specification
+          </h3>
+          <div className="overflow-x-auto rounded-xl shadow-lg">
+            <table className="min-w-full table-auto border border-gray-300 text-sm md:text-base">
+              <thead className="bg-yellow-500 text-white">
+                <tr>
+                  <th className="px-6 py-4">PRODUCT NAME</th>
+                  <th className="px-6 py-4">AWS/SFA</th>
+                  <th className="px-6 py-4">YIELD STRENGTH (N/MM²)</th>
+                  <th className="px-6 py-4">TENSILE STRENGTH (N/MM²)</th>
+                  <th className="px-6 py-4">ELONGATION Δ5(%)</th>
+                  <th className="px-6 py-4">IMPACT V (J) -30°C</th>
+                  <th className="px-6 py-4">WELDING CONDITIONS</th>
+                </tr>
+              </thead>
+              <tbody className="bg-white text-center text-gray-700">
+                <tr className="hover:bg-gray-50 transition">
+                  <td className="border px-6 py-4 font-semibold text-black">
+                    {product.name}
+                  </td>
+                  <td className="border px-6 py-4">{product.aws}</td>
+                  <td className="border px-6 py-4">≥{product.yieldStrength}</td>
+                  <td className="border px-6 py-4">{product.tensileStrength}</td>
+                  <td className="border px-6 py-4">≥{product.elongation}</td>
+                  <td className="border px-6 py-4">≥{product.impactValue}</td>
+                  <td className="border px-6 py-4">DC(+)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+      <FloatingButtons />
+    </main>
   );
 }
