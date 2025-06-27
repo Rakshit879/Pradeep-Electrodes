@@ -67,32 +67,25 @@ export default function ProductDetailPage() {
             <table className="min-w-full table-auto border border-gray-300 text-sm md:text-base">
               <thead className="bg-yellow-500 text-white">
                 <tr>
-                  <th className="px-6 py-4">PRODUCT NAME</th>
-                  <th className="px-6 py-4">AWS/SFA</th>
-                  <th className="px-6 py-4">YIELD STRENGTH (N/MM²)</th>
-                  <th className="px-6 py-4">TENSILE STRENGTH (N/MM²)</th>
-                  <th className="px-6 py-4">ELONGATION Δ5(%)</th>
-                  <th className="px-6 py-4">IMPACT V (J) -30°C</th>
-                  <th className="px-6 py-4">WELDING CONDITIONS</th>
+                  <th className="px-6 py-4">Specification</th>
+                  <th className="px-6 py-4">Value</th>
                 </tr>
               </thead>
               <tbody className="bg-white text-center text-gray-700">
-                <tr className="hover:bg-gray-50 transition">
-                  <td className="border px-6 py-4 font-semibold text-black">
-                    {product.name}
-                  </td>
-                  <td className="border px-6 py-4">{product.aws}</td>
-                  <td className="border px-6 py-4">≥{product.yieldStrength}</td>
-                  <td className="border px-6 py-4">{product.tensileStrength}</td>
-                  <td className="border px-6 py-4">≥{product.elongation}</td>
-                  <td className="border px-6 py-4">≥{product.impactValue}</td>
-                  <td className="border px-6 py-4">DC(+)</td>
-                </tr>
+                {product.specs?.map((spec, index) => (
+                  <tr key={index} className="hover:bg-gray-50 transition">
+                    <td className="border px-6 py-4 font-semibold text-black">
+                      {spec.label}
+                    </td>
+                    <td className="border px-6 py-4">{spec.value}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
         </div>
       </section>
+
 
       <Footer />
       <FloatingButtons />
