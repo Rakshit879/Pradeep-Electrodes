@@ -12,7 +12,7 @@ export const products = [
   {
     id: 1,
     name: "Pradeep E-6013",
-    slug: "mild-steel-6013",
+    slug: "mild-steel-electrode-6013",
     image: "/images/product1.jpeg",
     category: "Mild Steel Electrode",
     description:
@@ -37,7 +37,7 @@ export const products = [
   {
     id: 2,
     name: "Weld Bond 308",
-    slug: "stainless-steel-308",
+    slug: "stainless-steel-electrode-308",
     image: "/images/product1.jpeg",
     category: "Stainless Steel Electrode",
     description:
@@ -61,7 +61,7 @@ export const products = [
   {
     id: 3,
     name: "Weld Bond 309",
-    slug: "stainless-steel-309",
+    slug: "stainless-steel-electrode-309",
     image: "/images/product1.jpeg",
     category: "Stainless Steel Electrode",
     description:

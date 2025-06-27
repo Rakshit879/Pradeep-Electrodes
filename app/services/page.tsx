@@ -7,12 +7,18 @@ import { products, categories } from "@/data/products";
 import Sidebar from "@/components/Sidebar";
 import ProductCard from "@/components/ProductCard";
 import Footer from "@/components/sections/Footer";
+import Head from "next/head";
 
 export default function ServicesPage() {
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
   const filteredProducts = products.filter(p => p.category === selectedCategory);
   return (
     <main className="min-h-screen bg-gray-100">
+      <Head>
+        <title>Explore Welding Electrodes – E6013, E7018, 308 & 309 – Pradeep Electrodes</title>
+        <meta name="description" content="Browse our full range of electrodes: mild steel, stainless steel, cast iron & corrosive resistant. Discover specs, arc characteristics, packaging & download datasheets." />
+        <meta name="keywords" content="welding electrodes, best welding rods, E6013 rod, E7018 electrode, E7016 electrode, cast iron electrode, cutting electrode, hard V electrode, mild steel electrode, stainless steel rod, E308 welding rod, E309 welding rod, welding electrode types" />
+      </Head>
       <Navbar />
  
       {/* Header Section */}

@@ -2,10 +2,16 @@ import { Navbar } from "@/components/Navbar";
 import Image from "next/image";
 import FloatingButtons from "@/components/FloatingButtons";
 import Footer from "@/components/sections/Footer";
+import Head from "next/head";
 
 export default function AboutPage() {
     return (
         <main className="min-h-screen bg-gray-100">
+            <Head>
+                <title>About Pradeep Electrodes | Trusted Welding Electrode Supplier</title>
+                <meta name="description" content="Contact Pradeep Electrodes for premium welding rods—E6013, E7018, stainless & cast iron electrodes. Based in Hapur (Uttar Pradesh), shipping across India." />
+                <meta name="keywords" content="welding electrode supplier India, welding rod manufacturer contact, Pradeep Electrodes Hapur" />
+            </Head>
             <Navbar />
 
             {/* Hero Section */}
@@ -29,7 +35,7 @@ export default function AboutPage() {
             <section className={`py-12 px-6 md:px-16 flex flex-col md:flex-row gap-10`}>
                 {/* Left Description */}
                 <div className="flex-1 mt-7">
-                    <h1 className="text-gray-700 mb-4 text-4xl"><strong>Who are we?</strong></h1>
+                    <h2 className="text-gray-700 mb-4 text-4xl"><strong>Who are we?</strong></h2>
                     <p className="text-gray-700 mb-4">Established with a commitment to engineering excellence and innovation, <strong>Pradeep Electrodes</strong> has steadily grown into a respected name in the Indian welding industry. Based in Hapur, Uttar Pradesh, we specialize in manufacturing high-performance welding electrodes that consistently meet demanding industrial standards.</p>
 
                     <p className="font-bold text-gray-700 mb-4">Founded with the vision of delivering quality, reliability, and customer-focused solutions, Pradeep Electrodes serves a wide range of sectors across India — from fabrication and construction to heavy engineering and maintenance. Our facility is equipped with advanced production machinery and testing systems to ensure precision and consistency in every batch we manufacture.</p>
@@ -88,7 +94,7 @@ export default function AboutPage() {
                 </div>
 
             </section>
-            <Footer/>
+            <Footer />
             <FloatingButtons />
         </main>
     );

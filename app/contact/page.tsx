@@ -9,6 +9,7 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import FloatingButtons from "@/components/FloatingButtons";
 import Footer from "@/components/sections/Footer";
+import Head from "next/head";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -38,6 +39,11 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen bg-gray-100">
+      <Head>
+        <title>Contact Pradeep Electrodes | Trusted Welding Electrode Supplier</title>
+        <meta name="description" content="Contact Pradeep Electrodes for premium welding rods—E6013, E7018, stainless & cast iron electrodes. Based in Hapur (Uttar Pradesh), shipping across India." />
+        <meta name="keywords" content="welding electrode supplier India, welding rod manufacturer contact, Pradeep Electrodes Hapur" />
+      </Head>
       <Navbar />
       <section className="pt-32 px-4 pb-16">
         <div className="container mx-auto">
@@ -215,8 +221,8 @@ export default function ContactPage() {
 
         </div>
       </section>
-      <Footer/>
-      <FloatingButtons/>
+      <Footer />
+      <FloatingButtons />
     </main>
   );
 }

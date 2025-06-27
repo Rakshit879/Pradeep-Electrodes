@@ -7,6 +7,7 @@ import Footer from "@/components/sections/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function ProductDetailPage() {
   const params = useParams();
@@ -19,7 +20,19 @@ export default function ProductDetailPage() {
 
   return (
     <main className="bg-gray-100 min-h-screen">
+      <Head>
+        <title>{`${product.name} | Pradeep Electrodes`}</title>
+        <meta
+          name="description"
+          content={`Buy ${product.name} – ${product.description?.slice(0, 150) || "Explore top quality welding electrodes for all applications."}`}
+        />
+        <meta
+          name="keywords"
+          content={`welding rod ${product.name}, ${product.category}, buy ${product.name}, ${product.slug}, welding electrode`}
+        />
+      </Head>
       <Navbar />
+
       <section className="pt-28 px-4">
         <div className="container mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="w-full flex justify-center">
@@ -32,9 +45,9 @@ export default function ProductDetailPage() {
             />
           </div>
           <div className="bg-white p-8 rounded-2xl shadow-xl">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-yellow-500 mb-6">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-yellow-500 mb-6">
               {product.name}
-            </h2>
+            </h1>
             <p className="text-gray-800 text-lg leading-relaxed mb-6">
               {product.description ||
                 "Premium electrode for professional-grade performance across multiple welding needs."}
