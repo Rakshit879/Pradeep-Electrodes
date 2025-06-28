@@ -140,11 +140,11 @@ export default function ContactPage() {
 
               </form>
             </div>
-
+ 
             {/* Right Column - Form */}
             <div className="hidden md:flex items-center justify-center h-full">
               <Image
-                src="/images/ContactPageImage.jpg"
+                src="/images/ContactPageImage.png"
                 alt="Pradeep Electrodes"
                 width={800}
                 height={800}

@@ -13,7 +13,7 @@ export const products = [
     id: 1,
     name: "Pradeep E-6013",
     slug: "mild-steel-electrode-6013",
-    image: "/images/product1.jpeg",
+    image: "/images/Pradeep-E-6013.png",
     category: "Mild Steel Electrode",
     description:
       "E6013 is a versatile, rutile-coated welding electrode known for its smooth arc, easy slag removal, and excellent weld finish in all positions.",
@@ -38,7 +38,7 @@ export const products = [
     id: 2,
     name: "Weld Bond 308",
     slug: "stainless-steel-electrode-308",
-    image: "/images/product1.jpeg",
+    image: "/images/WELD BOND.png",
     category: "Stainless Steel Electrode",
     description:
       "Weld Bond 308 is designed for welding austenitic stainless steels, offering high corrosion resistance and exceptional weldability on AC or DC sources.",
@@ -62,7 +62,7 @@ export const products = [
     id: 3,
     name: "Weld Bond 309",
     slug: "stainless-steel-electrode-309",
-    image: "/images/product1.jpeg",
+    image: "/images/WELD BOND.png",
     category: "Stainless Steel Electrode",
     description:
       "Weld Bond 309 is specially formulated for welding dissimilar metals and stainless-to-mild steel joints, offering excellent crack resistance, high strength, and superior performance on both AC and DC power sources.",
@@ -88,7 +88,7 @@ export const products = [
     id: 4,
     name: "7016 Welding Electrode",
     slug: "7016-welding-electrode",
-    image: "/images/product1.jpeg",
+    image: "/images/Pradeep.png",
     category: "7016 Welding Electrode",
     description:
       "A premium basic-coated, low hydrogen electrode designed to deliver robust, crack-free weld joints with superior mechanical integrity. It offers excellent arc stability and control across all welding positions, making it the preferred choice for critical applications, especially root pass welding.",
@@ -115,7 +115,7 @@ export const products = [
     id: 5,
     name: "7018 Welding Electrode",
     slug: "7018-welding-electrode",
-    image: "/images/product1.jpeg",
+    image: "/images/Pradeep.png",
     category: "7018 Welding Electrode",
     description:
       "E7018 is a low-hydrogen, iron powder electrode designed for high-strength, crack-resistant welds with excellent mechanical properties. It offers smooth arc stability, minimal spatter, and superior performance in structural, pipeline, and pressure vessel applications. Ideal for out-of-position welding with easy slag removal and excellent re-strike characteristics.",
