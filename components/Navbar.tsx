@@ -50,7 +50,7 @@ export function Navbar() {
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8 text-base font-medium transition-colors duration-300">
             <Link href="/" className={`${textColorClass} ${linkUnderline('/')}`}>Home</Link>
-            <Link href="/services" className={`${textColorClass} ${linkUnderline('/services')}`}>Products</Link>
+            <Link href="/products" className={`${textColorClass} ${linkUnderline('/products')}`}>Products</Link>
             <Link href="/about" className={`${textColorClass} ${linkUnderline('/about')}`}>About</Link>
             <Link href="/contact" className={`${textColorClass} ${linkUnderline('/contact')}`}>Contact</Link>
           </div>
@@ -83,7 +83,7 @@ export function Navbar() {
           <h3 className="font-bold text-2xl">Navigation</h3>
           <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
           <Link href="/about" onClick={() => setMenuOpen(false)}>About</Link>
-          <Link href="/services" onClick={() => setMenuOpen(false)}>Products</Link>
+          <Link href="/products" onClick={() => setMenuOpen(false)}>Products</Link>
           <Link href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
         </div>
       </div>

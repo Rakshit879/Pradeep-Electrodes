@@ -7,7 +7,6 @@ import Footer from "@/components/sections/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import Image from "next/image";
 import Link from "next/link";
-import Head from "next/head";
 
 export default function ProductDetailPage() {
   const params = useParams();
@@ -20,17 +19,6 @@ export default function ProductDetailPage() {
 
   return (
     <main className="bg-gray-100 min-h-screen">
-      <Head>
-        <title>{`${product.name} | Pradeep Electrodes`}</title>
-        <meta
-          name="description"
-          content={`Buy ${product.name} – ${product.description?.slice(0, 150) || "Explore top quality welding electrodes for all applications."}`}
-        />
-        <meta
-          name="keywords"
-          content={`welding rod ${product.name}, ${product.category}, buy ${product.name}, ${product.slug}, welding electrode`}
-        />
-      </Head>
       <Navbar />
 
       <section className="pt-28 px-4">

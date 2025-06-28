@@ -5,15 +5,15 @@ import { Button } from "@/components/ui/button";
 const products = [
   {
     name: "Mild Steel Electrode",
-    image: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=800&q=80"
+    image: "/images/Pradeep.png"
   },
   {
     name: "Stainless Steel Electrode",
-    image: "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?w=800&q=80"
+    image: "/images/Pradeep.png"
   },
   {
     name: "Cutting Electrode",
-    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80"
+    image: "/images/Pradeep.png"
   }
 ];
 
@@ -30,7 +30,7 @@ export function FeaturedProducts() {
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
               <h3 className="font-semibold text-center hover:underline cursor-pointer">
@@ -42,7 +42,7 @@ export function FeaturedProducts() {
 
         {/* ✅ Link wraps the Button */}
         <div className="text-center mt-8">
-          <Link href="/services">
+          <Link href="/products">
             <Button variant="outline" size="lg" className="rounded-full px-8">
               SHOP ALL
             </Button>

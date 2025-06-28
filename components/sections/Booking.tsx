@@ -54,7 +54,7 @@ export function Booking() {
                   className="flex justify-between items-center py-3 px-4 bg-gray-50 hover:bg-orange-50 rounded-md transition"
                 >
                   <span className="text-gray-800 font-medium">{type}</span>
-                  <Link href="/services">
+                  <Link href="/products">
                     <Button
                       variant="outline"
                       className="border-yellow-500 text-yellow-400 hover:bg-yellow-500 hover:text-white transition"

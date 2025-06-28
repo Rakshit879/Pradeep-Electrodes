@@ -25,7 +25,7 @@ export default function Footer() {
                     <h3 className="text-xl font-bold mb-4 text-white">Useful Links</h3>
                     <ul className="space-y-2 text-gray-300">
                         <li>
-                            <Link href="/services" className="hover:text-yellow-400 cursor-pointer">
+                            <Link href="/products" className="hover:text-yellow-400 cursor-pointer">
                                 Products
                             </Link>
                         </li>
@@ -58,7 +58,7 @@ export default function Footer() {
                             "7018 Welding Electrode",
                         ].map((item, index) => (
                             <li key={index}>
-                                <Link href="/services" className="hover:text-yellow-400 cursor-pointer">
+                                <Link href="/products" className="hover:text-yellow-400 cursor-pointer">
                                     {item}
                                 </Link>
                             </li>

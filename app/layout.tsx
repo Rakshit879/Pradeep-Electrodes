@@ -14,10 +14,10 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
-export const metadata: Metadata = {
-  title: "Pradeep Electrodes - Manufacturing Excellence",
-  description: "Transforming the future of manufacturing with innovative solutions",
-};
+// export const metadata: Metadata = {
+//   title: "Pradeep Electrodes - Manufacturing Excellence",
+//   description: "Transforming the future of manufacturing with innovative solutions",
+// };
 
 export default function RootLayout({
   children,

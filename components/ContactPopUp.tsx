@@ -1,20 +1,26 @@
-// components/ContactPopup.tsx
 "use client";
+
 import { useEffect, useState } from "react";
 
 export default function ContactPopup() {
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
-    const isSubmitted = localStorage.getItem("popup_submitted");
-    if (!isSubmitted) {
-      const timer = setTimeout(() => setShowPopup(true), 5000);
-      return () => clearTimeout(timer);
+    // Ensure it runs only on the client
+    if (typeof window !== "undefined") {
+      const isSubmitted = localStorage.getItem("popup_submitted");
+      if (!isSubmitted) {
+        const timer = setTimeout(() => setShowPopup(true), 5000); // show after 5 seconds
+        return () => clearTimeout(timer);
+      }
     }
   }, []);
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     localStorage.setItem("popup_submitted", "true");
+    setShowPopup(false);
+    e.currentTarget.submit(); // let formsubmit.co handle the submission
   };
 
   if (!showPopup) return null;
@@ -25,14 +31,24 @@ export default function ContactPopup() {
         onSubmit={handleSubmit}
         action="https://formsubmit.co/rakshitgarg809@gmail.com"
         method="POST"
-        className="bg-white rounded-xl p-8 w-full max-w-md shadow-xl"
+        className="bg-white rounded-xl p-8 w-full max-w-md shadow-xl relative"
       >
+        {/* Close Button */}
+        <button
+          type="button"
+          onClick={() => setShowPopup(false)}
+          className="absolute top-4 right-4 text-gray-400 hover:text-black text-xl"
+        >
+          &times;
+        </button>
+
         <h2 className="text-2xl font-bold text-center mb-6">Stay Connected</h2>
 
+        {/* FormSubmit hidden fields */}
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_subject" value="New Website Lead" />
         <input type="hidden" name="_next" value="http://localhost:3000/" />
-    
+
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700">Name</label>
           <input

@@ -2,16 +2,43 @@ import { Navbar } from "@/components/Navbar";
 import Image from "next/image";
 import FloatingButtons from "@/components/FloatingButtons";
 import Footer from "@/components/sections/Footer";
-import Head from "next/head";
+
+export const metadata = {
+  title: "About Us | Pradeep Electrodes – Trusted Welding Electrode Manufacturer in India",
+  description: "Learn about Pradeep Electrodes – an ISI & ISO-certified welding electrode manufacturer based in Hapur, Uttar Pradesh. Delivering quality E6013, E7018, stainless steel, and specialty welding rods across India.",
+  keywords: [
+    "about Pradeep Electrodes",
+    "welding electrode manufacturer India",
+    "E6013 rod supplier",
+    "E7018 welding rod",
+    "stainless steel electrodes",
+    "welding company in Hapur",
+    "trusted welding brands India"
+  ],
+  robots: {
+    index: true,
+    follow: true
+  },
+  openGraph: {
+    title: "About Us | Pradeep Electrodes – Trusted Welding Electrode Manufacturer",
+    description: "Discover Pradeep Electrodes' journey as a reliable supplier of certified welding rods across India, including E6013, E7018, and more.",
+    // url: "https://yourdomain.com/about",
+    type: "website",
+    // images: [
+    //   {
+    //     url: "https://yourdomain.com/images/og-about.jpg",
+    //     width: 1200,
+    //     height: 630,
+    //     alt: "About Pradeep Electrodes – Welding Rod Manufacturer"
+    //   }
+    // ]
+  }
+};
+
 
 export default function AboutPage() {
     return (
         <main className="min-h-screen bg-gray-100">
-            <Head>
-                <title>About Pradeep Electrodes | Trusted Welding Electrode Supplier</title>
-                <meta name="description" content="Contact Pradeep Electrodes for premium welding rods—E6013, E7018, stainless & cast iron electrodes. Based in Hapur (Uttar Pradesh), shipping across India." />
-                <meta name="keywords" content="welding electrode supplier India, welding rod manufacturer contact, Pradeep Electrodes Hapur" />
-            </Head>
             <Navbar />
 
             {/* Hero Section */}

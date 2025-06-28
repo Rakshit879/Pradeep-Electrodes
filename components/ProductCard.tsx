@@ -9,7 +9,7 @@ interface ProductCardProps {
   
 export default function ProductCard({ name, slug, image }: ProductCardProps) {
   return (
-    <Link href={`/services/${slug}`}>
+    <Link href={`/products/${slug}`}>
       <div className="border p-4 rounded hover:shadow-md cursor-pointer w-full">
         <div className="relative w-[250px] h-[250px]">
           <Image
