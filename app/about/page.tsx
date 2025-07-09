@@ -4,35 +4,35 @@ import FloatingButtons from "@/components/FloatingButtons";
 import Footer from "@/components/sections/Footer";
 
 export const metadata = {
-  title: "About Us | Pradeep Electrodes – Trusted Welding Electrode Manufacturer in India",
-  description: "Learn about Pradeep Electrodes – an ISI & ISO-certified welding electrode manufacturer based in Hapur, Uttar Pradesh. Delivering quality E6013, E7018, stainless steel, and specialty welding rods across India.",
-  keywords: [
-    "about Pradeep Electrodes",
-    "welding electrode manufacturer India",
-    "E6013 rod supplier",
-    "E7018 welding rod",
-    "stainless steel electrodes",
-    "welding company in Hapur",
-    "trusted welding brands India"
-  ],
-  robots: {
-    index: true,
-    follow: true
-  },
-  openGraph: {
-    title: "About Us | Pradeep Electrodes – Trusted Welding Electrode Manufacturer",
-    description: "Discover Pradeep Electrodes' journey as a reliable supplier of certified welding rods across India, including E6013, E7018, and more.",
-    // url: "https://yourdomain.com/about",
-    type: "website",
-    // images: [
-    //   {
-    //     url: "https://yourdomain.com/images/og-about.jpg",
-    //     width: 1200,
-    //     height: 630,
-    //     alt: "About Pradeep Electrodes – Welding Rod Manufacturer"
-    //   }
-    // ]
-  }
+    title: "About Us | Pradeep Electrodes – Trusted Welding Electrode Manufacturer in India",
+    description: "Learn about Pradeep Electrodes – an ISI & ISO-certified welding electrode manufacturer based in Hapur, Uttar Pradesh. Delivering quality E6013, E7018, stainless steel, and specialty welding rods across India.",
+    keywords: [
+        "about Pradeep Electrodes",
+        "welding electrode manufacturer India",
+        "E6013 rod supplier",
+        "E7018 welding rod",
+        "stainless steel electrodes",
+        "welding company in Hapur",
+        "trusted welding brands India"
+    ],
+    robots: {
+        index: true,
+        follow: true
+    },
+    openGraph: {
+        title: "About Us | Pradeep Electrodes – Trusted Welding Electrode Manufacturer",
+        description: "Discover Pradeep Electrodes' journey as a reliable supplier of certified welding rods across India, including E6013, E7018, and more.",
+        // url: "https://yourdomain.com/about",
+        type: "website",
+        // images: [
+        //   {
+        //     url: "https://yourdomain.com/images/og-about.jpg",
+        //     width: 1200,
+        //     height: 630,
+        //     alt: "About Pradeep Electrodes – Welding Rod Manufacturer"
+        //   }
+        // ]
+    }
 };
 
 
@@ -88,26 +88,24 @@ export default function AboutPage() {
                 </div>
 
                 {/* Right Image Grid */}
-                {/* <div className="grid grid-cols-2 grid-rows-3 flex-1 mt-16">
-
+                <div className="flex-1 mt-7">
                     <Image
-                        src="/images/ContactPageImage.jpg"
-                        width={300}
-                        height={200}
-                        layout="responsive"
-                        style={{ objectFit: "cover" }}
+                        src="/images/pradeepElectrode2.png"
                         alt="Pradeep Electrodes"
+                        width={500}
+                        height={500}
+                        className="object-contain"
                     />
+                </div>
 
-                </div> */}
-                <div className="grid grid-cols-2 grid-rows-3 gap-2 flex-1 mt-16">
+                {/* <div className="grid grid-cols-1 grid-rows-1 gap-2 flex-1 mt-16">
                     {[
                         "/images/ContactPageImage.jpg",
-                        "/images/ContactPageImage.jpg",
-                        "/images/ContactPageImage.jpg",
-                        "/images/ContactPageImage.jpg",
-                        "/images/ContactPageImage.jpg",
-                        "/images/ContactPageImage.jpg",
+                        // "/images/ContactPageImage.jpg",
+                        // "/images/ContactPageImage.jpg",
+                        // "/images/ContactPageImage.jpg",
+                        // "/images/ContactPageImage.jpg",
+                        // "/images/ContactPageImage.jpg",
                     ].map((src, i) => (
                         <Image
                             key={i}
@@ -115,10 +113,10 @@ export default function AboutPage() {
                             alt={`Welding Image ${i + 1}`}
                             width={400}
                             height={400}
-                            className="w-full h-full object-cover rounded-md shadow"
+                            className="w-auto h-auto m-auto object-cover rounded-md shadow"
                         />
                     ))}
-                </div>
+                </div> */}
 
             </section>
             <Footer />

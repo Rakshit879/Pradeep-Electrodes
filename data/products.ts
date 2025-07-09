@@ -139,4 +139,82 @@ export const products = [
       { label: "WELDING CONDITIONS", value: "AC/DC(+)" }
     ]
   },
+  {
+    id: 6,
+    name: "Cast Iron Electrode",
+    slug: "cat-iron-electrode",
+    image: "/images/WELD BOND.png",
+    category: "Cast Iron Electrode",
+    description:
+      "Our cast electrodes are expertly designed for welding cast iron components with outstanding strength and reliability. Whether you're repairing engine blocks, housings, or machinery parts, these electrodes provide excellent fusion, reduced cracking risks, and strong, machinable welds. Perfect for maintenance and repair tasks, they deliver consistent performance across a wide range of cast iron grades and operating conditions.",
+    usps: [
+      "Excellent crack resistance and fusion on grey, malleable, and nodular cast irons",
+      "Smooth, machinable welds ideal for critical repairs and rebuilds",
+      "Low heat input reduces distortion and thermal stress on the base material",
+      "Versatile performance in out-of-position welding for on-site repairs"
+    ],
+
+
+
+
+    specs: [
+      { label: "Product Name", value: "Cast Iron Electrode" },
+      // { label: "YIELD STRENGTH N/MM2", value: "≥450" },
+      // { label: "TENSILE STRENGTH N/MM2", value: "540-620" },
+      // { label: "ELONGATION A5(%)", value: "≥27" },
+      // { label: "IMPACT O V (J) -30°C", value: "≥80" },
+      // { label: "WELDING CONDITIONS", value: "AC/DC(+)" }
+    ]
+  },
+  {
+    id: 7,
+    name: "Cutting Electrode",
+    slug: "cutting-electrode",
+    image: "/images/WELD BOND.png",
+    category: "Cutting Electrode",
+    description:
+      "Specially formulated for the cutting of all kinds of metals—including alloyed and unalloyed steels, non-ferrous metals, cast iron, and cast steels—this electrode ensures clean, fast, and reliable cuts in diverse industrial conditions.",
+    usps: [
+      "Fast and precise metal severing for increased productivity in cutting operations",
+      "Stable arc performance for smooth, continuous cuts with minimal operator fatigue",
+      "Reduced slag and clean cut edges, minimizing the need for secondary finishing"
+    ],
+
+
+
+    specs: [
+      { label: "Product Name", value: "Cutting Electrode" },
+      // { label: "YIELD STRENGTH N/MM2", value: "≥450" },
+      // { label: "TENSILE STRENGTH N/MM2", value: "540-620" },
+      // { label: "ELONGATION A5(%)", value: "≥27" },
+      // { label: "IMPACT O V (J) -30°C", value: "≥80" },
+      // { label: "WELDING CONDITIONS", value: "AC/DC(+)" }
+    ]
+  },
+  {
+    id: 8,
+    name: "Hard V Electrode",
+    slug: "hardV-electrode",
+    image: "/images/WELD BOND.png",
+    category: "Hard V Electrode",
+    description:
+      "Hard V welding electrode is formulated to deposit a high‑chromium, vanadium‑enriched alloy weld metal that resists severe abrasion while withstanding moderate impact and compressive loading. Its stable arc and low‑spatter slag make it easy to use in both fabrication and maintenance settings, delivering long‑lasting protection to components that operate in gritty, high‑wear environments.",
+    usps: [
+      "High chromium–vanadium alloy deposit delivers superior resistance to severe abrasion and moderate impact",
+      "Air-hardening weld metal ensures excellent hardness (52–56 HRC) without the need for post-weld heat treatment",
+      "Smooth arc stability with low spatter and easy slag removal for efficient, clean welding",
+      "Ideal for hardfacing critical wear components like crusher parts, excavator buckets, and tillage tools"
+    ],
+
+
+
+    specs: [
+      { label: "Product Name", value: "Hard V Electrode" },
+      // { label: "YIELD STRENGTH N/MM2", value: "≥450" },
+      // { label: "TENSILE STRENGTH N/MM2", value: "540-620" },
+      // { label: "ELONGATION A5(%)", value: "≥27" },
+      // { label: "IMPACT O V (J) -30°C", value: "≥80" },
+      // { label: "WELDING CONDITIONS", value: "AC/DC(+)" }
+    ]
+  },
 ];

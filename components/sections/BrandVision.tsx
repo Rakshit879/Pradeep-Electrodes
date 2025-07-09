@@ -7,14 +7,16 @@ export function BrandVision() {
     <section className="py-20 px-4 bg-white">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         {/* Image Section */}
-        <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg">
+        <div className="relative w-full h-[500px]">
           <Image
-            src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=800&q=80"
+            src="/images/pradeepElectrode2.png"
             alt="Advanced welding and manufacturing"
             fill
-            className="object-cover"
+            className="object-contain"
           />
         </div>
+
+
 
         {/* Text Section */}
         <div className="text-left">
