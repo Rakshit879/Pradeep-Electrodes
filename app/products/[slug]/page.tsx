@@ -1,17 +1,18 @@
 import ProductDetailPage from "./ProductDetailPage";
 import { products } from "@/data/products";
 
-// ✅ Define the expected props
 type Props = {
   params: {
     slug: string;
   };
 };
 
-// ✅ For SEO metadata
+// ✅ generateMetadata with awaited params
 export async function generateMetadata({ params }: Props) {
+  const { slug } = await Promise.resolve(params);
+
   const product = products.find(
-    (p) => p.slug === params.slug || p.name.toLowerCase().includes(params.slug)
+    (p) => p.slug === slug || p.name.toLowerCase().includes(slug)
   );
 
   if (!product) {
@@ -24,8 +25,7 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: `${product.name} | Pradeep Electrodes`,
     description: `Buy ${product.name} – ${
-      product.description?.slice(0, 150) ||
-      "Explore top quality welding electrodes for all applications."
+      product.description?.slice(0, 150) || "Explore top quality welding electrodes."
     }`,
     keywords: [
       `welding rod ${product.name}`,
@@ -58,7 +58,8 @@ export async function generateMetadata({ params }: Props) {
   };
 }
 
-// ✅ Pass slug as prop to the component
-export default function Page({ params }: Props) {
-  return <ProductDetailPage slug={params.slug} />;
+// ✅ FIXED: async function to await params
+export default async function Page({ params }: Props) {
+  const { slug } = await Promise.resolve(params);
+  return <ProductDetailPage slug={slug} />;
 }

@@ -18,6 +18,11 @@ const inter = Inter({
 //   title: "Pradeep Electrodes - Manufacturing Excellence",
 //   description: "Transforming the future of manufacturing with innovative solutions",
 // };
+export const metadata = {
+  icons: {
+    icon: "/favicon.ico", // ✅ This line is important
+  },
+};
 
 export default function RootLayout({
   children,
