@@ -12,6 +12,7 @@ export function Hero() {
           muted
           playsInline
           preload="auto"
+          poster="/images/video-thumbnail.jpg"
           className="object-cover w-full h-full opacity-70"
         >
           <source src="/videos/welding.mp4" type="video/mp4" />

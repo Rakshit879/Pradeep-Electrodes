@@ -29,7 +29,7 @@ export default function ContactPopup() {
     <div className="fixed inset-0 z-[999] bg-black/70 backdrop-blur-sm flex items-center justify-center">
       <form
         onSubmit={handleSubmit}
-        action="https://formsubmit.co/rakshitgarg809@gmail.com"
+        action="https://formsubmit.co/pradeepelectrodesofficial@gmail.com"
         method="POST"
         className="bg-white rounded-xl p-8 w-full max-w-md shadow-xl relative"
       >
