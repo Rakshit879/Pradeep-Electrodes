@@ -1,15 +1,17 @@
 import ProductDetailPage from "./ProductDetailPage";
 import { products } from "@/data/products";
+import { Metadata } from "next";
 
-type Props = {
-  params: {
-    slug: string;
-  };
-};
+// ✅ SSG (for static generation)
+export async function generateStaticParams() {
+  return products.map((product) => ({ slug: product.slug }));
+}
 
-// ✅ generateMetadata with awaited params
-export async function generateMetadata({ params }: Props) {
-  const { slug } = await Promise.resolve(params);
+// ✅ Fixed metadata generation - await params before use
+export async function generateMetadata(
+  { params }: { params: Promise<{ slug: string }> }
+): Promise<Metadata> {
+  const { slug } = await params;
 
   const product = products.find(
     (p) => p.slug === slug || p.name.toLowerCase().includes(slug)
@@ -18,48 +20,25 @@ export async function generateMetadata({ params }: Props) {
   if (!product) {
     return {
       title: "Product Not Found | Pradeep Electrodes",
-      description: "Sorry, the requested welding electrode could not be found.",
+      description: "Sorry, the requested product could not be found.",
+      metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
     };
   }
 
   return {
     title: `${product.name} | Pradeep Electrodes`,
-    description: `Buy ${product.name} – ${
-      product.description?.slice(0, 150) || "Explore top quality welding electrodes."
-    }`,
-    keywords: [
-      `welding rod ${product.name}`,
-      product.category,
-      `buy ${product.name}`,
-      product.slug,
-      "welding electrode",
-    ],
-    robots: {
-      index: true,
-      follow: true,
-    },
+    description: product.description,
+    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
     openGraph: {
       title: `${product.name} | Pradeep Electrodes`,
-      description: `Buy ${product.name} – ${product.description?.slice(0, 150)}`,
-      type: "website",
-    },
-    other: {
-      "application/ld+json": JSON.stringify({
-        "@context": "https://schema.org/",
-        "@type": "Product",
-        name: product.name,
-        description: product.description,
-        brand: {
-          "@type": "Brand",
-          name: "Pradeep Electrodes",
-        },
-      }),
+      description: product.description,
+      images: [{ url: product.image }],
     },
   };
 }
 
-// ✅ FIXED: async function to await params
-export default async function Page({ params }: Props) {
-  const { slug } = await Promise.resolve(params);
+// ✅ Fixed main page component - await params before use
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   return <ProductDetailPage slug={slug} />;
 }
