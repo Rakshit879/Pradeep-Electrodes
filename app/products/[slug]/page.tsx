@@ -1,7 +1,15 @@
 import ProductDetailPage from "./ProductDetailPage";
 import { products } from "@/data/products";
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+// ✅ Define the expected props
+type Props = {
+  params: {
+    slug: string;
+  };
+};
+
+// ✅ For SEO metadata
+export async function generateMetadata({ params }: Props) {
   const product = products.find(
     (p) => p.slug === params.slug || p.name.toLowerCase().includes(params.slug)
   );
@@ -15,22 +23,25 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
   return {
     title: `${product.name} | Pradeep Electrodes`,
-    description: `Buy ${product.name} – ${product.description?.slice(0, 150) || "Explore top quality welding electrodes for all applications."}`,
+    description: `Buy ${product.name} – ${
+      product.description?.slice(0, 150) ||
+      "Explore top quality welding electrodes for all applications."
+    }`,
     keywords: [
       `welding rod ${product.name}`,
       product.category,
       `buy ${product.name}`,
       product.slug,
-      "welding electrode"
+      "welding electrode",
     ],
     robots: {
       index: true,
-      follow: true
+      follow: true,
     },
     openGraph: {
       title: `${product.name} | Pradeep Electrodes`,
       description: `Buy ${product.name} – ${product.description?.slice(0, 150)}`,
-      type: "website" // ✅ correct and safe
+      type: "website",
     },
     other: {
       "application/ld+json": JSON.stringify({
@@ -40,13 +51,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         description: product.description,
         brand: {
           "@type": "Brand",
-          name: "Pradeep Electrodes"
-        }
-      })
-    }
+          name: "Pradeep Electrodes",
+        },
+      }),
+    },
   };
 }
 
-export default function Page() {
-  return <ProductDetailPage />;
+// ✅ Pass slug as prop to the component
+export default function Page({ params }: Props) {
+  return <ProductDetailPage slug={params.slug} />;
 }

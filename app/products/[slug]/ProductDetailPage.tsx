@@ -1,6 +1,5 @@
 "use client";
 
-import { useParams } from "next/navigation";
 import { products } from "@/data/products";
 import { Navbar } from "@/components/Navbar";
 import Footer from "@/components/sections/Footer";
@@ -8,14 +7,22 @@ import FloatingButtons from "@/components/FloatingButtons";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ProductDetailPage() {
-  const params = useParams();
-  const slug = typeof params?.slug === "string" ? params.slug : "";
+// ✅ Accept slug as prop
+type Props = {
+  slug: string;
+};
+
+export default function ProductDetailPage({ slug }: Props) {
   const product = products.find(
     (p) => p.slug === slug || p.name.toLowerCase().includes(slug)
   );
 
-  if (!product) return <div className="text-center p-10 text-xl text-red-500">Product not found.</div>;
+  if (!product)
+    return (
+      <div className="text-center p-10 text-xl text-red-500">
+        Product not found.
+      </div>
+    );
 
   return (
     <main className="bg-gray-100 min-h-screen">
@@ -47,10 +54,14 @@ export default function ProductDetailPage() {
             </Link>
 
             <div className="mt-10">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Why Choose This?</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Why Choose This?
+              </h3>
               <ul className="list-disc pl-5 text-gray-700 space-y-2">
                 {product.usps?.map((usp, index) => (
-                  <li key={index} className="text-base">{usp}</li>
+                  <li key={index} className="text-base">
+                    {usp}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -86,7 +97,6 @@ export default function ProductDetailPage() {
           </div>
         </div>
       </section>
-
 
       <Footer />
       <FloatingButtons />
