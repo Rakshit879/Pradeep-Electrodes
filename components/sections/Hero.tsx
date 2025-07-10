@@ -11,6 +11,7 @@ export function Hero() {
           loop
           muted
           playsInline
+          preload="auto"
           className="object-cover w-full h-full opacity-70"
         >
           <source src="/videos/welding.mp4" type="video/mp4" />
