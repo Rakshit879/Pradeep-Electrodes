@@ -5,7 +5,7 @@ export function Hero() {
     <section className="relative min-h-screen bg-black">
       <Navbar />
 
-      <div className="absolute inset-0 p-10">
+      <div className="absolute inset-0">
         <video
           autoPlay
           loop
