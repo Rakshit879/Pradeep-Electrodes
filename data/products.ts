@@ -36,12 +36,12 @@ export const products = [
   },
   {
     id: 2,
-    name: "Weld Bond 308",
+    name: "MRF 308",
     slug: "stainless-steel-electrode-308",
-    image: "/images/WELD BOND.png",
+    image: "/images/MRF.png",
     category: "Stainless Steel Electrode",
     description:
-      "Weld Bond 308 is designed for welding austenitic stainless steels, offering high corrosion resistance and exceptional weldability on AC or DC sources.",
+      "MRF 308 is designed for welding austenitic stainless steels, offering high corrosion resistance and exceptional weldability on AC or DC sources.",
     usps: [
       "Self-lifting slag for effortless post-weld cleanup.",
       "Superior fluidity control enables smooth out-of-position welding, easy electrode handling, faster operation, and reduced welder fatigue — allowing longer weld lengths per electrode and lower consumption.",
@@ -60,12 +60,12 @@ export const products = [
   },
   {
     id: 3,
-    name: "Weld Bond 309",
+    name: "MRF 309",
     slug: "stainless-steel-electrode-309",
-    image: "/images/WELD BOND.png",
+    image: "/images/MRF.png",
     category: "Stainless Steel Electrode",
     description:
-      "Weld Bond 309 is specially formulated for welding dissimilar metals and stainless-to-mild steel joints, offering excellent crack resistance, high strength, and superior performance on both AC and DC power sources.",
+      "MRF 309 is specially formulated for welding dissimilar metals and stainless-to-mild steel joints, offering excellent crack resistance, high strength, and superior performance on both AC and DC power sources.",
     usps: [
       "Designed for welding dissimilar metals and stainless-to-carbon steel joints with excellent metallurgical compatibility.",
       "Outstanding crack resistance and high tensile strength ensure durable, long-lasting welds.",
@@ -143,7 +143,7 @@ export const products = [
     id: 6,
     name: "Cast Iron Electrode",
     slug: "cat-iron-electrode",
-    image: "/images/WELD BOND.png",
+    image: "/images/MRF.png",
     category: "Cast Iron Electrode",
     description:
       "Our cast electrodes are expertly designed for welding cast iron components with outstanding strength and reliability. Whether you're repairing engine blocks, housings, or machinery parts, these electrodes provide excellent fusion, reduced cracking risks, and strong, machinable welds. Perfect for maintenance and repair tasks, they deliver consistent performance across a wide range of cast iron grades and operating conditions.",
@@ -170,7 +170,7 @@ export const products = [
     id: 7,
     name: "Cutting Electrode",
     slug: "cutting-electrode",
-    image: "/images/WELD BOND.png",
+    image: "/images/MRF.png",
     category: "Cutting Electrode",
     description:
       "Specially formulated for the cutting of all kinds of metals—including alloyed and unalloyed steels, non-ferrous metals, cast iron, and cast steels—this electrode ensures clean, fast, and reliable cuts in diverse industrial conditions.",
@@ -195,7 +195,7 @@ export const products = [
     id: 8,
     name: "Hard V Electrode",
     slug: "hardV-electrode",
-    image: "/images/WELD BOND.png",
+    image: "/images/MRF.png",
     category: "Hard V Electrode",
     description:
       "Hard V welding electrode is formulated to deposit a high‑chromium, vanadium‑enriched alloy weld metal that resists severe abrasion while withstanding moderate impact and compressive loading. Its stable arc and low‑spatter slag make it easy to use in both fabrication and maintenance settings, delivering long‑lasting protection to components that operate in gritty, high‑wear environments.",
