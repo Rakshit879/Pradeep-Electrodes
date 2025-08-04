@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 const products = [
   {
     name: "Stainless Steel Electrode",
-    image: "/images/MRF.png",
+    image: "/images/WELD BOND IMAGE.jpg",
   },
   {
     name: "Mild Steel Electrode",
@@ -13,7 +13,7 @@ const products = [
   },
   {
     name: "Cutting Electrode",
-    image: "/images/MRF.png",
+    image: "/images/WELD BOND IMAGE.jpg",
   },
 ];
 
