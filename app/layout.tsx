@@ -22,6 +22,14 @@ export const metadata = {
   icons: {
     icon: "/favicon.ico", // ✅ This line is important
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 };
 
 export default function RootLayout({

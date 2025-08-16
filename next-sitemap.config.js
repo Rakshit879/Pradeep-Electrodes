@@ -1,5 +1,5 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://pradeepelectrode.com',
+  siteUrl: 'https://www.pradeepelectrode.com',
   generateRobotsTxt: true,
 };
