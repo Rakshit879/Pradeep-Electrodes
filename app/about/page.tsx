@@ -22,7 +22,7 @@ export const metadata = {
     openGraph: {
         title: "About Us | Pradeep Electrodes – Trusted Welding Electrode Manufacturer",
         description: "Discover Pradeep Electrodes' journey as a reliable supplier of certified welding rods across India, including E6013, E7018, and more.",
-        // url: "https://yourdomain.com/about",
+        url: "https://pradeepelectrode.com/about",
         type: "website",
         // images: [
         //   {

@@ -22,7 +22,7 @@ export const metadata = {
   openGraph: {
     title: "Pradeep Electrodes | Leading Welding Electrode Manufacturer in India",
     description: "Premium welding electrodes certified by ISI & ISO – E6013, E7018, 308, 309 & more. Smooth finish, easy slag removal, and high-strength welds.",
-    // url: "https://yourdomain.com",
+    url: "https://pradeepelectrode.com",
     siteName: "Pradeep Electrodes",
     // images: [
     //   {
