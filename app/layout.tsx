@@ -3,8 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import '@/lib/fontawesome';
 import RouteLoadingHandler from "../components/sections/RouteLoadingHandler";
-import { config } from '@fortawesome/fontawesome-svg-core'
-import '@fortawesome/fontawesome-svg-core/styles.css'
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { Analytics } from "@vercel/analytics/next";
 
 config.autoAddCss = false
 
@@ -42,6 +43,7 @@ export default function RootLayout({
       <body className="antialiased">
         <RouteLoadingHandler />
         {children}
+        <Analytics />
       </body>
     </html>
   );
