@@ -7,10 +7,10 @@ export function BrandVision() {
     <section className="py-20 px-4 bg-white">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         {/* Image Section */}
-        <div className="relative w-full h-[500px]">
+        <div className="relative w-full h-[400px]">
           <Image
             src="/images/pradeepElectrode2.png"
-            alt="Advanced welding and manufacturing"
+            alt="Top 10 Welding Electrodes manufacturers in india"
             fill
             className="object-contain"
           />

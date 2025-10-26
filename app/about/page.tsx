@@ -88,12 +88,12 @@ export default function AboutPage() {
                 </div>
 
                 {/* Right Image Grid */}
-                <div className="flex-1 mt-7">
+                <div className="flex-1 flex justify-center items-center mt-9">
                     <Image
                         src="/images/pradeepElectrode2.png"
                         alt="Pradeep Electrodes"
-                        width={500}
-                        height={500}
+                        width={400}
+                        height={400}
                         className="object-contain"
                     />
                 </div>
