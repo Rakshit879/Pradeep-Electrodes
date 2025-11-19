@@ -142,7 +142,7 @@ export const products = [
   {
     id: 6,
     name: "Cast Iron Electrode",
-    slug: "cat-iron-electrode",
+    slug: "cast-iron-electrode",
     image: "/images/WELD BOND IMAGE.jpg",
     category: "Cast Iron Electrode",
     description:
