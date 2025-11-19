@@ -6,6 +6,9 @@ import Footer from "@/components/sections/Footer";
 export const metadata = {
     title: "About Us | Pradeep Electrodes – Trusted Welding Electrode Manufacturer in India",
     description: "Learn about Pradeep Electrodes – an ISI & ISO-certified welding electrode manufacturer based in Hapur, Uttar Pradesh. Delivering quality E6013, E7018, stainless steel, and specialty welding rods across India.",
+    alternates: {
+        canonical: "https://www.pradeepelectrode.com/",
+    },
     keywords: [
         "about Pradeep Electrodes",
         "welding electrode manufacturer India",

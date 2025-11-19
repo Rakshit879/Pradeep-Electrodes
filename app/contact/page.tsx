@@ -5,6 +5,9 @@ export const metadata = {
   title: "Contact Pradeep Electrodes | Trusted Welding Electrode Supplier",
   description:
     "Contact Pradeep Electrodes for premium welding rods—E6013, E7018, stainless & cast iron electrodes. Based in Hapur (Uttar Pradesh), shipping across India.",
+  alternates: {
+    canonical: "https://www.pradeepelectrode.com/",
+  },
   keywords: [
     "welding electrode supplier India",
     "welding rod manufacturer contact",

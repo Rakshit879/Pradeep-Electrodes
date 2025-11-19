@@ -5,6 +5,9 @@ export const metadata = {
   title: "Explore Welding Electrodes – E6013, E7018, 308 & 309 – Pradeep Electrodes",
   description:
     "Browse our full range of electrodes: mild steel, stainless steel, cast iron & corrosive resistant. Discover specs, arc characteristics, packaging & download datasheets.",
+  alternates: {
+    canonical: "https://www.pradeepelectrode.com/",
+  },
   keywords: [
     "welding electrodes",
     "best welding rods",
