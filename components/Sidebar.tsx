@@ -6,7 +6,7 @@ interface SidebarProps {
  
 export default function Sidebar({ categories, onSelect, selected }: SidebarProps) {
   return (
-    <div className="w-full md:w-max bg-gray-200 rounded-3xl p-12 pl-7 h-max">
+    <div className="w-full md:w-max bg-gray-200 rounded-3xl p-6 pl-4 h-max">
       <h2 className="font-bold mb-4">All Categories</h2>
       {categories.map((cat) => (
         <button

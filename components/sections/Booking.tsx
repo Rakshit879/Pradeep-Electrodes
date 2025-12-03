@@ -18,10 +18,22 @@ export function Booking() {
               we engineer performance, reliability, and trust. With decades of expertise, we empower industries with
               precision-engineered solutions that spark quality and consistency in every weld.
             </p>
+            <div className="mt-6 flex gap-3 flex-wrap">
+              <Link href="/products">
+                <Button className="bg-yellow-400 hover:bg-yellow-500 text-white px-6 py-2 rounded-full font-semibold">
+                  Browse Electrodes
+                </Button>
+              </Link>
+              <Link href="/about">
+                <Button variant="outline" className="border-yellow-400 text-yellow-400 hover:bg-yellow-50 px-6 py-2 rounded-full font-semibold">
+                  Our Story
+                </Button>
+              </Link>
+            </div>
             <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=800&q=80"
-                alt="Manufacturing equipment"
+                src="/images/Gemini_Generated_Image_bzj82ybzj82ybzj8.png"
+                alt="Advanced welding electrode manufacturing equipment at Pradeep Electrodes facility"
                 fill
                 className="object-cover"
               />

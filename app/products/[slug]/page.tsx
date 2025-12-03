@@ -1,16 +1,19 @@
-// app/products/[slug]/page.tsx
 import ProductDetailPage from "./ProductDetailPage";
 import { products } from "@/data/products";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+// ✅ SSG (for static generation)
+export async function generateStaticParams() {
+  return products.map((product) => ({ slug: product.slug }));
+}
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-// ✅ Generate metadata for SEO
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { slug } = await params; // ✅ await here
+  const { slug } = await params; 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://www.pradeepelectrode.com";
 
   const product = products.find(
@@ -40,7 +43,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-// ✅ Default export: React component
 export default async function Page({ params }: PageProps) {
   const { slug } = await params;
 
@@ -48,7 +50,7 @@ export default async function Page({ params }: PageProps) {
     (p) => p.slug === slug || p.name.toLowerCase().includes(slug)
   );
 
-  if (!productExists) return notFound(); // shows 404 page
+  if (!productExists) return notFound(); 
 
   return <ProductDetailPage slug={slug} />;
 }

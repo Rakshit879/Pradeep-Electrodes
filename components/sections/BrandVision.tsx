@@ -31,6 +31,10 @@ export function BrandVision() {
             we strive to empower industries with reliability that ignites progress.
           </p>
 
+          <p className="text-lg text-gray-700 leading-relaxed mb-6">
+            Explore our comprehensive range of <Link href="/products" className="font-semibold text-yellow-400 hover:underline">welding electrodes</Link> including E6013, E7018, stainless steel, and specialty alloys—all engineered for exceptional performance across diverse industrial applications.
+          </p>
+
           <Link href="/about">
             <Button className="bg-yellow-400 hover:bg-yellow-500 text-white px-6 py-2 rounded-full">
               Learn More

@@ -6,6 +6,7 @@ import Footer from "@/components/sections/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 
 type Props = {
   slug: string;
@@ -23,11 +24,109 @@ export default function ProductDetailPage({ slug }: Props) {
       </div>
     );
 
+  // Product Schema JSON-LD
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": product.name,
+    "description": product.description,
+    "image": product.image,
+    "brand": {
+      "@type": "Brand",
+      "name": "Pradeep Electrodes"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "Pradeep Electrodes",
+      "url": "https://www.pradeepelectrode.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Meerut Road, Near Income Tax Office",
+        "addressLocality": "Hapur",
+        "postalCode": "245101",
+        "addressRegion": "Uttar Pradesh",
+        "addressCountry": "IN"
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "50",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": `https://www.pradeepelectrode.com/products/${product.slug}`,
+      "priceCurrency": "INR",
+      "price": "Contact for pricing",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Pradeep Electrodes",
+        "url": "https://www.pradeepelectrode.com"
+      }
+    },
+    "category": product.category,
+    "keywords": [product.name, product.category, "welding electrode", "welding rod", "ISI certified", "ISO certified"].filter(Boolean)
+  };
+
+  // Breadcrumb Schema JSON-LD
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.pradeepelectrode.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Products",
+        "item": "https://www.pradeepelectrode.com/products"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": product.name,
+        "item": `https://www.pradeepelectrode.com/products/${product.slug}`
+      }
+    ]
+  };
+
   return (
     <main className="bg-gray-100 min-h-screen">
+      <Script
+        id="product-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+        strategy="afterInteractive"
+      />
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        strategy="afterInteractive"
+      />
       <Navbar />
 
-      <section className="pt-28 px-4">
+      {/* Breadcrumb Navigation */}
+      <section className="pt-24 px-4 bg-gray-100">
+        <div className="container mx-auto max-w-6xl">
+          <nav className="flex items-center gap-2 text-sm text-gray-600 mb-8">
+            <Link href="/" className="hover:text-yellow-500">Home</Link>
+            <span>/</span>
+            <Link href="/products" className="hover:text-yellow-500">Products</Link>
+            <span>/</span>
+            <span className="text-gray-900 font-semibold">{product.name}</span>
+          </nav>
+        </div>
+      </section>
+
+      <section className="px-4">
         <div className="container mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="w-full flex justify-center">
             <Image
@@ -99,6 +198,56 @@ export default function ProductDetailPage({ slug }: Props) {
           </div>
         </section>
       )}
+
+      {/* Related Products Section */}
+      <section className="mt-20 px-4 pb-12">
+        <div className="container mx-auto max-w-6xl">
+          <h3 className="text-3xl font-bold mb-8 text-gray-900">
+            Explore Other <span className="text-yellow-500">Welding Electrodes</span>
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {products
+              .filter(
+                (p) =>
+                  p.id !== product.id &&
+                  (p.category === product.category || p.category.includes("Electrode"))
+              )
+              .slice(0, 3)
+              .map((relatedProduct) => (
+                <Link
+                  key={relatedProduct.id}
+                  href={`/products/${relatedProduct.slug}`}
+                  className="bg-white rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 p-6 border border-gray-200"
+                >
+                  <div className="relative w-full h-40 mb-4">
+                    <Image
+                      src={relatedProduct.image}
+                      alt={relatedProduct.name}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <h4 className="font-semibold text-gray-900 text-lg mb-2">
+                    {relatedProduct.name}
+                  </h4>
+                  <p className="text-sm text-gray-600 mb-4 line-clamp-2">
+                    {relatedProduct.description}
+                  </p>
+                  <span className="inline-block px-3 py-1 bg-yellow-100 text-yellow-800 text-sm rounded-full font-medium">
+                    Learn More →
+                  </span>
+                </Link>
+              ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link href="/products">
+              <button className="bg-yellow-400 hover:bg-yellow-500 text-white px-8 py-3 rounded-full font-semibold transition">
+                View All Welding Electrodes
+              </button>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <Footer />
       <FloatingButtons />

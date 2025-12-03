@@ -2,31 +2,34 @@ import { Navbar } from "@/components/Navbar";
 import Image from "next/image";
 import FloatingButtons from "@/components/FloatingButtons";
 import Footer from "@/components/sections/Footer";
+import { FaShieldAlt, FaCogs, FaHandsHelping } from "react-icons/fa";
+import { products } from "@/data/products";
 
 export const metadata = {
-    title: "About Us | Pradeep Electrodes – Trusted Welding Electrode Manufacturer in India",
-    description: "Learn about Pradeep Electrodes – an ISI & ISO-certified welding electrode manufacturer based in Hapur, Uttar Pradesh. Delivering quality E6013, E7018, stainless steel, and specialty welding rods across India.",
+    title: "Pradeep Electrodes | ISI & ISO Certified Manufacturer",
+    description: "Pradeep Electrodes – an industry-leading manufacturer in Hapur, UP. 20+ years of expertise in producing ISI & ISO certified E6013, E7018, stainless steel rods.",
     alternates: {
-        canonical: "https://www.pradeepelectrode.com/",
+        canonical: "https://www.pradeepelectrode.com/about",
     },
     keywords: [
         "about Pradeep Electrodes",
         "welding electrode manufacturer India",
         "E6013 rod supplier",
-        "E7018 welding rod",
-        "stainless steel electrodes",
-        "welding company in Hapur",
-        "trusted welding brands India"
+        "E7018 welding rod manufacturer",
+        "stainless steel electrodes manufacturer",
+        "welding manufacturer in Hapur UP",
+        "trusted welding brands India",
+        "ISI certified electrode maker",
+        "ISO 9001 welding rod producer",
+        "welding electrode supplier Uttar Pradesh"
     ],
-    robots: {
-        index: true,
-        follow: true
-    },
+    robots: { index: true, follow: true, "max-image-preview": "large" },
     openGraph: {
-        title: "About Us | Pradeep Electrodes – Trusted Welding Electrode Manufacturer",
-        description: "Discover Pradeep Electrodes' journey as a reliable supplier of certified welding rods across India, including E6013, E7018, and more.",
-        url: "https://pradeepelectrode.com/about",
+        title: "About Pradeep Electrodes | Trusted Welding Rod Manufacturer",
+        description: "Learn about our 20+ years of expertise in manufacturing high-quality ISI & ISO certified welding electrodes for construction, fabrication & heavy engineering.",
+        url: "https://www.pradeepelectrode.com/about",
         type: "website",
+        locale: "en_IN"
         // images: [
         //   {
         //     url: "https://yourdomain.com/images/og-about.jpg",
@@ -35,7 +38,12 @@ export const metadata = {
         //     alt: "About Pradeep Electrodes – Welding Rod Manufacturer"
         //   }
         // ]
-    }
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "About Pradeep Electrodes",
+        description: "20+ years of trusted welding electrode manufacturing."
+    },
 };
 
 
@@ -48,7 +56,7 @@ export default function AboutPage() {
             <section className="relative w-full h-[80vh] mt-16">
                 <Image
                     src="/images/aboutHeroImage.jpg"
-                    alt="Hero Image"
+                    alt="Pradeep Electrodes manufacturing facility - welding electrode production and quality control"
                     fill
                     className="object-cover brightness-[0.5]"
                     priority
@@ -61,46 +69,113 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Content Section */}
-            <section className={`py-12 px-6 md:px-16 flex flex-col md:flex-row gap-10`}>
-                {/* Left Description */}
-                <div className="flex-1 mt-7">
-                    <h2 className="text-gray-700 mb-4 text-4xl"><strong>Who are we?</strong></h2>
-                    <p className="text-gray-700 mb-4">Established with a commitment to engineering excellence and innovation, <strong>Pradeep Electrodes</strong> has steadily grown into a respected name in the Indian welding industry. Based in Hapur, Uttar Pradesh, we specialize in manufacturing high-performance welding electrodes that consistently meet demanding industrial standards.</p>
+            {/* Intro + Image */}
+            <section className="py-12 px-6 md:px-16">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 className="text-4xl font-semibold text-gray-800 mb-4">Who are we?</h2>
+                        <p className="text-gray-700 mb-4">Established with a commitment to engineering excellence and innovation, <strong>Pradeep Electrodes</strong> has steadily grown into a respected name in the Indian welding industry. Based in Hapur, Uttar Pradesh, we specialize in manufacturing high-performance welding electrodes that consistently meet demanding industrial standards.</p>
 
-                    <p className="font-bold text-gray-700 mb-4">Founded with the vision of delivering quality, reliability, and customer-focused solutions, Pradeep Electrodes serves a wide range of sectors across India — from fabrication and construction to heavy engineering and maintenance. Our facility is equipped with advanced production machinery and testing systems to ensure precision and consistency in every batch we manufacture.</p>
+                        <p className="font-medium text-gray-700 mb-4">Founded with the vision of delivering quality, reliability, and customer-focused solutions, Pradeep Electrodes serves a wide range of sectors across India — from fabrication and construction to heavy engineering and maintenance.</p>
 
-                    <p className="text-gray-700 text-2xl mb-2 font-medium"><strong>Our product portfolio includes:</strong></p>
-                    <ul className="list-disc text-gray-700 pl-5 mb-4">
-                        <li>Mild Steel Welding Electrodes</li>
-                        <li>Stainless Steel Welding Electrodes</li>
-                        <li>Cast Iron Welding Electrodes</li>
-                        <li>Hard V Welding Electrodes</li>
-                        <li>Cutting Electrodes</li>
-                        <li>7016 Welding Electrodes</li>
-                        <li>7018 Welding Electrodes</li>
-                    </ul>
+                        <p className="text-gray-700 mb-4">Each product is manufactured under stringent quality control protocols to ensure high arc stability, low spatter, strong weld integrity, and superior finish — delivering optimum performance in even the most demanding environments.</p>
+                    </div>
 
-                    <p className="mb-4 text-gray-700">Each product is manufactured under stringent quality control protocols to ensure high arc stability, low spatter, strong weld integrity, and superior finish — delivering optimum performance in even the most demanding environments.</p>
-
-                    <p className="mb-4 text-gray-700">At Pradeep Electrodes, we continuously invest in process improvements, material innovations, and skilled workforce training to stay aligned with evolving industry requirements. Our commitment to continuous improvement and customer satisfaction drives us to deliver not just products, but welding solutions that our clients can rely on.</p>
-
-                    <p className="mb-4 text-gray-700">With a well-structured distribution network, we ensure timely and efficient delivery of our products across the country. Our dedicated service and support team provides technical assistance and after-sales services, helping customers achieve consistent welding performance and reduce downtime.</p>
-
-                    <p className="text-gray-700">Driven by quality, empowered by technology, and trusted by professionals,<strong> Pradeep Electrodes </strong>is your reliable partner for welding excellence.</p>
+                    <div className="flex justify-center">
+                        <Image
+                            src="/images/pradeepElectrode2.png"
+                            alt="Pradeep Electrodes - manufacturer of high-quality welding rods and electrodes in India"
+                            width={400}
+                            height={400}
+                            className="object-contain"
+                        />
+                    </div>
                 </div>
+            </section>
 
-                {/* Right Image Grid */}
-                <div className="flex-1 flex justify-center items-center mt-9">
-                    <Image
-                        src="/images/pradeepElectrode2.png"
-                        alt="Pradeep Electrodes"
-                        width={400}
-                        height={400}
-                        className="object-contain"
-                    />
+            {/* Values Section */}
+            <section className="py-8 px-6 md:px-16">
+                <div className="max-w-7xl mx-auto">
+                    <h3 className="text-3xl font-semibold text-gray-800 mb-6">Our Values</h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <div className="bg-white rounded-xl p-6 shadow">
+                            <div className="w-12 h-12 flex items-center justify-center rounded-md bg-yellow-400 text-black mb-4"><FaShieldAlt /></div>
+                            <h4 className="font-semibold mb-2">Quality First</h4>
+                            <p className="text-sm text-gray-600">Strict QC and certifications ensure consistent performance.</p>
+                        </div>
+
+                        <div className="bg-white rounded-xl p-6 shadow">
+                            <div className="w-12 h-12 flex items-center justify-center rounded-md bg-yellow-400 text-black mb-4"><FaCogs /></div>
+                            <h4 className="font-semibold mb-2">Technical Excellence</h4>
+                            <p className="text-sm text-gray-600">Modern production and testing for reliable electrodes.</p>
+                        </div>
+
+                        <div className="bg-white rounded-xl p-6 shadow">
+                            <div className="w-12 h-12 flex items-center justify-center rounded-md bg-yellow-400 text-black mb-4"><FaHandsHelping /></div>
+                            <h4 className="font-semibold mb-2">Customer Support</h4>
+                            <p className="text-sm text-gray-600">Responsive service and technical assistance across India.</p>
+                        </div>
+                    </div>
                 </div>
+            </section>
 
+            {/* Certificate (placed below Our Values) */}
+            <section className="py-8 px-6 md:px-16">
+                <div className="max-w-7xl mx-auto">
+                    <h3 className="text-2xl font-semibold text-gray-800 mb-6">Quality Certifications</h3>
+                    <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-start justify-items-center p-0">
+                        <div className="overflow-hidden text-center p-0 bg-transparent">
+                            <Image
+                                src="/images/certificate.png"
+                                alt="Pradeep Electrodes ISO Certificate"
+                                width={320}
+                                height={220}
+                                className="object-contain mx-auto  w-full h-auto"
+                            />
+                        </div>
+                        <div className="overflow-hidden text-center p-0 bg-transparent">
+                            <Image
+                                src="/images/certificate2.jpg"
+                                alt="Pradeep Electrodes CE Certificate"
+                                width={320}
+                                height={220}
+                                className="object-contain mx-auto  w-full h-auto"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Products Section */}
+            <section className="py-8 px-6 md:px-16">
+                <div className="max-w-7xl mx-auto">
+                    <h3 className="text-3xl font-semibold text-gray-800 mb-6">Our <span className="text-yellow-500">Product Range</span></h3>
+                    <p className="text-gray-700 mb-8">Pradeep Electrodes manufactures a comprehensive range of <strong>welding electrodes</strong> certified by ISI and ISO standards. Our products are engineered for superior arc stability, low spatter, and crack-resistant performance across diverse industrial applications.</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {products.map((prod) => (
+                            <a key={prod.id} href={`/products/${prod.slug}`} className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md hover:border-yellow-400 border border-gray-200 transition-all duration-300">
+                                <h4 className="font-medium mb-2 text-gray-900 group-hover:text-yellow-500">{prod.name}</h4>
+                                <p className="text-sm text-gray-600 mb-3">{prod.description?.slice(0, 120) ?? 'High arc stability and superior finish for industrial use.'}</p>
+                                <span className="inline-block text-yellow-500 text-sm font-medium hover:underline">View Details →</span>
+                            </a>
+                        ))}
+                    </div>
+                    <div className="text-center mt-8">
+                        <a href="/products" className="inline-block bg-yellow-400 hover:bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold transition">
+                            Explore All Welding Electrodes
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            {/* CTA Section */}
+            <section className="py-12 px-6 md:px-16">
+                <div className="max-w-4xl mx-auto text-center bg-yellow-50 border border-yellow-100 rounded-xl p-8">
+                    <h3 className="text-2xl font-semibold mb-2">Ready to talk?</h3>
+                    <p className="text-gray-700 mb-6">Contact our sales team to discuss product specifications, pricing, or bulk orders.</p>
+                    <a href="/contact" className="inline-block bg-black text-white px-6 py-3 rounded-full">Contact Us</a>
+                </div>
+            </section>
                 {/* <div className="grid grid-cols-1 grid-rows-1 gap-2 flex-1 mt-16">
                     {[
                         "/images/ContactPageImage.jpg",
@@ -121,9 +196,9 @@ export default function AboutPage() {
                     ))}
                 </div> */}
 
-            </section>
             <Footer />
             <FloatingButtons />
         </main>
     );
 }
+
